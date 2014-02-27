@@ -1,14 +1,14 @@
+#include <stdio.h>
 #include "codewar.h"
 
-int main()
+int main(int argc, char **argv)
 {
-  u16	toto = 0x4242;
-  inst	i;
-
-  i.b = toto;
-  if (i.inst1.op == 0x18)
-    printf("tutu\n");
-  else
-    printf("%d\n", sizeof(t_op_move));
+  if (argc < 3)
+    {
+      printf("Usage : ./codewar <cpu1.asm> <cpu2.asm> ...\n");
+      return (1);
+    }
+  if (codewar(argc, argv) == -1)
+    return (1);
   return (0);
 }

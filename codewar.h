@@ -1,10 +1,16 @@
 #ifndef __CODEWAR_H__
 #define __CODEWAR_H__
 
+#define	GRID_LENGTH	16
+#define GRID_HEIGHT	16
+
 #define REG_COUNT	8
 #define	RAM_COUNT	256
+#define CPU_COUNT	GRID_LENGTH * GRID_HEIGHT
 
 #define OP_SIZE		5
+
+#define READ_SIZE	256
 
 typedef unsigned short int u16;
 typedef unsigned char byte;
@@ -75,5 +81,12 @@ typedef union u_inst
   t_1_op_inst	inst1;
   t_op_move	mv;
 }	inst;
+
+void	clean_ram(char *ram);
+
+int	codewar(int argc, char **arg);
+int	load_cpu(char *file, t_cpu **grid);
+
+t_cpu	**init_grid();
 
 #endif
