@@ -25,5 +25,6 @@ int codewar(int argc, char **argv)
       printf("Too few CPU were loaded\n");
       return (-1);
     }
+  play(grid);
   return (0);
 }

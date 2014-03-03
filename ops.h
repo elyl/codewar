@@ -13,7 +13,7 @@
 
 /* Instructions CPU et code associes */
 #define OP_MOVE	0x00
-#define OP_PSUH	0x01
+#define OP_PUSH	0x01
 #define OP_POP	0x02
 #define OP_ADD	0x03
 #define OP_CMP	0x04

@@ -12,6 +12,8 @@
 
 #define READ_SIZE	256
 
+#define CYCLE_NUMBER	10
+
 typedef unsigned short int u16;
 typedef unsigned char byte;
 
@@ -82,11 +84,24 @@ typedef union u_inst
   t_op_move	mv;
 }	inst;
 
-void	clean_ram(char *ram);
+typedef struct s_inst_list
+{
+  unsigned char	value;
+  void (*fn) (t_cpu**, t_cpu*, inst*);
+}	t_inst_list;
 
-int	codewar(int argc, char **arg);
-int	load_cpu(char *file, t_cpu **grid);
+void		clean_ram(char *ram);
+void		run_inst(t_cpu *cpu);
+void		play(t_cpu **grid);
 
-t_cpu	**init_grid();
+int		codewar(int argc, char **arg);
+int		load_cpu(char *file, t_cpu **grid);
+
+t_cpu		**init_grid();
+
+t_inst_list	*init_ops(t_inst_list *st);
+
+void		inst_move(t_cpu **grid, t_cpu *cpu, inst *st);
+void		inst_push(t_cpu **grid, t_cpu *cpu, inst *st);
 
 #endif
