@@ -8,7 +8,8 @@ SRC=	main.c		\
 	run_inst.c	\
 	init_ops.c	\
 	inst_move.c	\
-	inst_push.c
+	inst_push.c	\
+	load_value.c
 OBJ=	$(SRC:.c=.o)
 CC=	gcc
 CFLAGS=	-W -Wall -g

@@ -1,0 +1,6 @@
+#include "codewar.h"
+
+byte	convert_value(byte nb)
+{
+  
+}
