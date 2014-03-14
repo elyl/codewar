@@ -1,1 +1,0 @@
-xhost + >>/dev/null
